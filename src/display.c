@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:28:13 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/19 02:51:30 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/20 22:54:15 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void	ft_mlxdisplay(t_mlx *fractol, int x, int y, int color)
 
 void	render(t_mlx *fractol)
 {
+	mlx_destroy_image(fractol->mlx, fractol->img);
+	fractol->img = mlx_new_image(fractol->mlx, WIDTH, HEIGHT);
+	fractol->addr = mlx_get_data_addr(fractol->img, &fractol->bpp, \
+					&fractol->size_line, &fractol->endian);
+	mlx_clear_window(fractol->mlx, fractol->win);
 	if (fractol->fractal)
 		mandelbrot(fractol);
 	else

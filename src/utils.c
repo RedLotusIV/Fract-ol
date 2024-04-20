@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:00:57 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/19 04:46:48 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/20 22:51:25 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	clean_args(t_mlx *fractol)
 	fractol->fractal = -1;
 	fractol->rn = 0;
 	fractol->in = 0;
+	fractol->zoom = 1.0;
 }

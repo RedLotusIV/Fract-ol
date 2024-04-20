@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:55:21 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/18 23:36:18 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/19 20:38:28 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,21 @@ int parsing(char **av, char ac, t_mlx *fractol)
 	}
 	if (ac >= 1)
 	{
-		if (!(ft_strncmp(av[0], "J", 1)) \
-			|| !(ft_strncmp(av[0], "j", 1)))
+		if (ac == 3 && (!(ft_strncmp(av[0], "J", 1))
+			|| !(ft_strncmp(av[0], "j", 1))))
 			fractol->fractal = 0;
-		else if ( !(ft_strncmp(av[0], "M", 1)) \
-			|| !(ft_strncmp(av[0], "m", 1)))
+		else if (ac == 1 && (!(ft_strncmp(av[0], "M", 1)) 
+			|| !(ft_strncmp(av[0], "m", 1))))
 			fractol->fractal = 1;
 		else
 		{
 			print_controls(0);
 			ft_exit_mlx(1, fractol);
 		}
-		if (ac >= 2 || ac <= 3)
+		if (ac >= 2 && ac <= 3)
 			coordinates_check(av + 1, ac - 1, fractol);
 	}
+	print_controls(1);
 	return (0);
 }
 int	coordinates_check(char **av, int ac ,t_mlx *fractol)
