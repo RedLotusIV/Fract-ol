@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:40:02 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/21 04:49:21 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:43:13 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main(int ac, char *av[])
 {
 	t_mlx	*fractol;
-	int flag = 0;
 	fractol = (t_mlx *)malloc(sizeof(t_mlx));
 	if (!fractol)
 		exit (1);

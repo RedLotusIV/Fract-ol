@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:00:57 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/21 05:14:39 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 19:58:10 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ void	clean_args(t_mlx *fractol)
 	fractol->endian = 0;
 	fractol->fractal = -1;
 	fractol->rn = 0;
-	fractol->in = 0;
+	fractol->in = 0.8;
 	fractol->zoom = 1.0;
 	fractol->x_offset = 0;
 	fractol->y_offset = 0;
+	fractol->max_iter = 100;
 }

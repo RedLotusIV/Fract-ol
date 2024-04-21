@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 03:20:20 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/21 05:50:25 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 19:34:50 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,38 @@ int	keyboard_hook(int keycode, t_mlx *fractol)
 	if (keycode == ESC)
 		end_window(fractol);
 	if (keycode == UP)
-		fractol->y_offset -= 0.1;
+		fractol->y_offset -= (0.5 * -fractol->zoom);
 	if (keycode == DOWN)
-		fractol->y_offset += 0.1;
+		fractol->y_offset += (0.5 * -fractol->zoom);
 	if (keycode == LEFT)
-		fractol->x_offset -= 0.1;
+		fractol->x_offset -= (0.5 * fractol->zoom);
 	if (keycode == RIGHT)
-		fractol->x_offset += 0.1;
-	// if (keycode == ESC || keycode == UP || keycode == DOWN 
-	// 	|| keycode == LEFT || keycode == RIGHT)
-	render(fractol);
+		fractol->x_offset += (0.5 * fractol->zoom);
+	if (keycode == PLUS || keycode == MINUS)
+		increase_iter(keycode, fractol);
+	if (keycode == SPACE)
+		switch_fractal(fractol);
+	if (keycode == ESC || keycode == UP || keycode == DOWN
+		|| keycode == LEFT || keycode == RIGHT)
+		render(fractol);
 	return (0);
+}
+int increase_iter(int keycode, t_mlx *fractol)
+{
+	if (keycode == PLUS && fractol->max_iter < 1000)
+		fractol->max_iter += 10;
+	if (keycode == MINUS && fractol->max_iter >= 20)
+		fractol->max_iter -= 10;
+	if (keycode == PLUS || keycode == MINUS)
+		render(fractol);
+	return (0);
+}
+void switch_fractal(t_mlx *fractol)
+{
+	fractol->fractal = !fractol->fractal;
+	fractol->x_offset = 0;
+	fractol->y_offset = 0;
+	fractol->zoom = 1.0;
+	fractol->max_iter = 100;
+	render(fractol);
 }

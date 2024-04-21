@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:31:06 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/21 05:13:44 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:48:04 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ typedef	struct	s_mlx
 	double		zoom;
 	int			y;
 	int			x;
-	int			x_offset;
-	int			y_offset;
+	double		x_offset;
+	double		y_offset;
+	int			max_iter;
 }				t_mlx;
 
 typedef struct	s_complex
@@ -38,8 +39,8 @@ typedef struct	s_complex
 	double		imag;
 }				t_complex;
 
-# define WIDTH 800
-# define HEIGHT 800
+# define WIDTH 400
+# define HEIGHT 400
 
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -59,14 +60,18 @@ void	initialise(t_mlx *fractol);
 void	clean_args(t_mlx *fractol);
 int		print_controls(int flag);
 // coordinates
-int		coordinates_check(char **av, int ac ,t_mlx *fractol);
+int		coordinates_check(char **av, t_mlx *fractol);
 double	ft_atof(char *str);
-int		space_check(char *str, int *sign);
-// calculation
+int		space_check(char *str);
+int 	sign_check(char *str, int *i);
+// fractals
 void	mandelbrot(t_mlx *fractol);
-int		julia(t_mlx *fractol);
+void	julia(t_mlx *fractol);
+int		calculate_julia(t_mlx *fractol, int y, int x);
 int		calculate_mandelbrot(t_mlx *fractol, int x, int y);
 double	scale(double x, double new_min, double new_max, double old_max);
+int		increase_iter(int keycode, t_mlx *fractol);
+void	switch_fractal(t_mlx *fractol);
 // hooks
 int		keyboard_hook(int keycode, t_mlx *fractol);
 int		mouse_hook(int keycode, int x, int y, t_mlx *fractol);

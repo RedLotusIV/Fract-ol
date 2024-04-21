@@ -6,7 +6,7 @@
 #    By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 00:04:02 by amouhand          #+#    #+#              #
-#    Updated: 2024/04/19 03:27:30 by amouhand         ###   ########.fr        #
+#    Updated: 2024/04/21 22:58:05 by amouhand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-CFLAGS = -g
+CFLAGS = -Wall -Wextra -g3 -O0
 
 MLX = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 

@@ -6,18 +6,18 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 03:16:28 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/18 23:53:21 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 19:33:01 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTROLS_H
 # define CONTROLS_H
 
-// events 
+// events
 # define CLOSE_WINDOW 17
 
 // buttons
-# define SPACE 
+# define SPACE 32
 # define ESC 65307
 # define UP 65362
 # define DOWN 65364
@@ -30,5 +30,6 @@
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
 //others
-# define MAX_ITER 100
+# define PLUS 61
+# define MINUS 45
 #endif
