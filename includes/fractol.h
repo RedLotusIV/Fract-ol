@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:31:06 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/20 22:18:07 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 05:13:44 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ typedef	struct	s_mlx
 	double		rn;
 	double		in;
 	double		zoom;
+	int			y;
+	int			x;
+	int			x_offset;
+	int			y_offset;
 }				t_mlx;
 
 typedef struct	s_complex
@@ -65,7 +69,7 @@ int		calculate_mandelbrot(t_mlx *fractol, int x, int y);
 double	scale(double x, double new_min, double new_max, double old_max);
 // hooks
 int		keyboard_hook(int keycode, t_mlx *fractol);
-int		mouse_hook(int keycode, t_mlx *fractol);
+int		mouse_hook(int keycode, int x, int y, t_mlx *fractol);
 // math
 t_complex	add(t_complex a, t_complex b);
 t_complex	square(t_complex a);

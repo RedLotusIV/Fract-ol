@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:40:02 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/20 22:08:09 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 04:49:21 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int main(int ac, char *av[])
 {
 	t_mlx	*fractol;
 	int flag = 0;
-	(void)av;
 	fractol = (t_mlx *)malloc(sizeof(t_mlx));
 	if (!fractol)
 		exit (1);
@@ -24,8 +23,8 @@ int main(int ac, char *av[])
 	parsing(av + 1, ac - 1, fractol);
 	initialise(fractol);
 	render(fractol);
-	mlx_hook(fractol->win, CLOSE_WINDOW, 0, &end_window, fractol);
-	mlx_key_hook(fractol->win, &keyboard_hook, fractol);
-	mlx_mouse_hook(fractol->win, &mouse_hook, fractol);
+	mlx_hook(fractol->win, CLOSE_WINDOW, 0, end_window, fractol);
+	mlx_key_hook(fractol->win, keyboard_hook, fractol);
+	mlx_mouse_hook(fractol->win, mouse_hook, fractol);
 	mlx_loop(fractol->mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:55:21 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/19 20:38:28 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 02:38:14 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int parsing(char **av, char ac, t_mlx *fractol)
 	}
 	if (ac >= 1)
 	{
-		if (ac == 3 && (!(ft_strncmp(av[0], "J", 1))
-			|| !(ft_strncmp(av[0], "j", 1))))
+		if (ac == 3 && (!(ft_strncmp(av[0], "J", ft_strlen(av[0])))
+			|| !(ft_strncmp(av[0], "j", ft_strlen(av[0])))))
 			fractol->fractal = 0;
-		else if (ac == 1 && (!(ft_strncmp(av[0], "M", 1)) 
-			|| !(ft_strncmp(av[0], "m", 1))))
+		else if (ac == 1 && (!(ft_strncmp(av[0], "M", ft_strlen(av[0]))) 
+			|| !(ft_strncmp(av[0], "m", ft_strlen(av[0])))))
 			fractol->fractal = 1;
 		else
 		{

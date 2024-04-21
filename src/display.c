@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:28:13 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/20 22:54:15 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 05:45:13 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ void	initialise(t_mlx *fractol)
 }
 double scale(double x, double new_min, double new_max, double old_max)
 {
-	return ((new_max - new_min) * (x - 0) / (old_max - 0) + new_min);
+	return ((new_max - new_min) * (x) / (old_max) + new_min);
 }

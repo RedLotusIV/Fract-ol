@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:54:06 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/19 03:41:09 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/21 05:41:33 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	calculate_mandelbrot(t_mlx *fractol, int x, int y)
 	t_complex c;
 	
 	iter = 0;
-	z.real = scale(x, -2, 2, WIDTH);
-	z.imag = scale(y, 2, -2, HEIGHT);
+	z.real = (scale(x, -2, 2, WIDTH) * fractol->zoom) + fractol->x_offset;
+	z.imag = (scale(y, 2, -2, HEIGHT) * fractol->zoom) + fractol->y_offset;
 	c.imag = z.imag;
 	c.real = z.real;
 	while (iter < MAX_ITER)
@@ -39,18 +39,16 @@ int	calculate_mandelbrot(t_mlx *fractol, int x, int y)
 
 void	mandelbrot(t_mlx *fractol)
 {
-	int x;
-	int y;
-
-	y = 0;
-	while (y < HEIGHT)
+	fractol->y = 0;
+	fractol->x = 0;
+	while (fractol->y < HEIGHT)
 	{
-		x = 0;
-		while (x < WIDTH)
+		fractol->x = 0;
+		while (fractol->x < WIDTH)
 		{
-			calculate_mandelbrot(fractol, x, y);
-			x++;
+			calculate_mandelbrot(fractol, fractol->x, fractol->y);
+			fractol->x++;
 		}
-		y++;
+		fractol->y++;
 	}
 }
