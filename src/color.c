@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouse_hook.c                                       :+:      :+:    :+:   */
+/*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 03:20:32 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/22 03:34:25 by amouhand         ###   ########.fr       */
+/*   Created: 2024/04/22 00:50:13 by amouhand          #+#    #+#             */
+/*   Updated: 2024/04/22 03:17:29 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int	mouse_hook(int keycode, int x, int y, t_mlx *fractol)
+int	color(t_mlx *fractol, int iter)
 {
-	(void)x;
-	(void)y;
-	if (keycode == 4)
-		fractol->zoom *= 1.1;
-	else if (keycode == 5)
-		fractol->zoom /= 1.1;
-	render(fractol);
-	return (0);
+	int	r;
+	int	g;
+	int	b;
+	int	var;
+
+	if (iter == fractol->max_iter)
+		return (BLACK);
+	var = scale(iter, 0, 255, fractol->max_iter);
+	r = (var << 5) & 0xff;
+	g = (var << 3) & 0xff;
+	b = (var << 1) & 0xff;
+	return ((r << 16) | (g << 8) | b);
 }

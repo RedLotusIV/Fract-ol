@@ -6,16 +6,17 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:54:09 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/21 22:36:31 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/22 03:19:27 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-int calculate_julia(t_mlx *fractol, int y, int x)
+
+int	calculate_julia(t_mlx *fractol, int y, int x)
 {
-	int iter;
-	t_complex z;
-	t_complex c;
+	int			iter;
+	t_complex	z;
+	t_complex	c;
 
 	iter = 0;
 	z.real = (scale(x, -2, 2, WIDTH) * fractol->zoom) + (fractol->x_offset);
@@ -26,12 +27,12 @@ int calculate_julia(t_mlx *fractol, int y, int x)
 	{
 		z = add(square(z), c);
 		if ((z.real * z.real) + (z.imag * z.imag) > 4)
-			return (ft_mlxdisplay(fractol, x, y, scale(iter, 0, 0xFFFFFF,
-				fractol->max_iter)), 0);
+			return (ft_mlxdisplay(fractol, x, y, color(fractol, iter)), 0);
 		iter++;
 	}
 	return (1);
 }
+
 void	julia(t_mlx *fractol)
 {
 	fractol->y = 0;

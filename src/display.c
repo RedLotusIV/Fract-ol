@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:28:13 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/21 18:57:55 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/22 03:18:50 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_mlxdisplay(t_mlx *fractol, int x, int y, int color)
 	char	*dst;
 
 	dst = fractol->addr + (y * fractol->size_line + x * (fractol->bpp / 8));
-	*(unsigned int*)dst = color;
+	*(unsigned int *)dst = color;
 }
 
 void	render(t_mlx *fractol)
@@ -41,7 +41,8 @@ void	initialise(t_mlx *fractol)
 	fractol->addr = mlx_get_data_addr(fractol->img, &fractol->bpp, \
 					&fractol->size_line, &fractol->endian);
 }
-double scale(double x, double new_min, double new_max, double old_max)
+
+double	scale(double x, double new_min, double new_max, double old_max)
 {
 	return ((new_max - new_min) * (x) / (old_max) + new_min);
 }

@@ -6,23 +6,23 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:30:38 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/18 20:58:44 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/22 03:26:22 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int print_controls(int flag)
+int	print_controls(int flag)
 {
 	if (flag)
 	{
 		ft_printf("\n====== Fract-Ol Controls ====\n");
 		ft_printf("\tZoom: Mouse wheel\n");
 		ft_printf("\tMove: Arrows\n");
-		ft_printf("\tChange color: Space\n");
-		ft_printf("\tChange fractal: M\n");
-		ft_printf("\tExit: ESC\n");	
-    	ft_printf("==============================\n\n");
+		ft_printf("\tChange iterations: + or -\n");
+		ft_printf("\tChange fractal: Space\n");
+		ft_printf("\tExit: ESC\n");
+		ft_printf("==============================\n\n");
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:54:06 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/21 19:27:02 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/04/22 03:21:35 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	calculate_mandelbrot(t_mlx *fractol, int x, int y)
 {
-	int iter;
-	t_complex z;
-	t_complex c;
+	int			iter;
+	t_complex	z;
+	t_complex	c;
 
 	iter = 0;
 	z.real = (scale(x, -2, 2, WIDTH) * fractol->zoom) + (fractol->x_offset);
@@ -27,11 +27,7 @@ int	calculate_mandelbrot(t_mlx *fractol, int x, int y)
 	{
 		z = add(square(z), c);
 		if ((z.real * z.real) + (z.imag * z.imag) > 4)
-			return (ft_mlxdisplay(fractol, x, y, scale(iter, 0, 0xFFFFFF,
-				fractol->max_iter)), 0);
-		// add the max iteration to the struct
-		// when you press + or - you will increase or decrease the max iteration
-		// so it changes the color of the fractal
+			return (ft_mlxdisplay(fractol, x, y, color(fractol, iter)), 0);
 		iter++;
 	}
 	return (1);
