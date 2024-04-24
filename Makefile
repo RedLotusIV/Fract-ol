@@ -6,13 +6,13 @@
 #    By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 00:04:02 by amouhand          #+#    #+#              #
-#    Updated: 2024/04/21 22:58:05 by amouhand         ###   ########.fr        #
+#    Updated: 2024/04/22 00:50:28 by amouhand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = src/main.c src/utils.c src/mandelbrot.c src/julia.c src/parsing.c\
 src/display.c src/keyboard_hook.c src/mouse_hook.c src/print_controls.c\
-src/math.c
+src/math.c src/color.c
 
 NAME = fractol
 
