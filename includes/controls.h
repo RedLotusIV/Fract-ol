@@ -29,7 +29,7 @@
 # define BLUE 0x0000FF
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
-//others
+// others
 # define PLUS 61
 # define MINUS 45
 #endif

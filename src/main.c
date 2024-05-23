@@ -18,7 +18,7 @@ int	main(int ac, char *av[])
 
 	fractol = (t_mlx *)malloc(sizeof(t_mlx));
 	if (!fractol)
-		exit (1);
+		exit(1);
 	clean_args(fractol);
 	parsing(av + 1, ac - 1, fractol);
 	initialise(fractol);

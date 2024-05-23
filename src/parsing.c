@@ -44,8 +44,8 @@ int	coordinates_check(char **av, t_mlx *fractol)
 	int	i;
 
 	i = 0;
-	if ((!ft_strchr(av[0], ',') && !ft_strchr(av[0], '.')) \
-	|| (!ft_strchr(av[1], ',') && !ft_strchr(av[1], '.')))
+	if ((!ft_strchr(av[0], ',') && !ft_strchr(av[0], '.')) || (!ft_strchr(av[1],
+				',') && !ft_strchr(av[1], '.')))
 	{
 		print_controls(0);
 		ft_exit_mlx(1, fractol);

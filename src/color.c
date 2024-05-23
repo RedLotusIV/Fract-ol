@@ -13,11 +13,11 @@
 #include "../includes/fractol.h"
 #include <stdlib.h>
 
-int random_color()
+int	random_color(void)
 {
-	int r;
-	int g;
-	int b;
+	int	r;
+	int	g;
+	int	b;
 
 	r = rand() % 256;
 	g = rand() % 256;

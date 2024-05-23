@@ -24,8 +24,8 @@ void	render(t_mlx *fractol)
 {
 	mlx_destroy_image(fractol->mlx, fractol->img);
 	fractol->img = mlx_new_image(fractol->mlx, WIDTH, HEIGHT);
-	fractol->addr = mlx_get_data_addr(fractol->img, &fractol->bpp, \
-					&fractol->size_line, &fractol->endian);
+	fractol->addr = mlx_get_data_addr(fractol->img, &fractol->bpp,
+			&fractol->size_line, &fractol->endian);
 	if (fractol->fractal)
 		mandelbrot(fractol);
 	else
@@ -38,8 +38,8 @@ void	initialise(t_mlx *fractol)
 	fractol->mlx = mlx_init();
 	fractol->win = mlx_new_window(fractol->mlx, WIDTH, HEIGHT, "Fractol");
 	fractol->img = mlx_new_image(fractol->mlx, WIDTH, HEIGHT);
-	fractol->addr = mlx_get_data_addr(fractol->img, &fractol->bpp, \
-					&fractol->size_line, &fractol->endian);
+	fractol->addr = mlx_get_data_addr(fractol->img, &fractol->bpp,
+			&fractol->size_line, &fractol->endian);
 }
 
 double	scale(double x, double new_min, double new_max, double old_max)

@@ -28,8 +28,8 @@ int	keyboard_hook(int keycode, t_mlx *fractol)
 		increase_iter(keycode, fractol);
 	if (keycode == SPACE)
 		switch_fractal(fractol);
-	if (keycode == ESC || keycode == UP || keycode == DOWN
-		|| keycode == LEFT || keycode == RIGHT)
+	if (keycode == ESC || keycode == UP || keycode == DOWN || keycode == LEFT
+		|| keycode == RIGHT)
 		render(fractol);
 	return (0);
 }
