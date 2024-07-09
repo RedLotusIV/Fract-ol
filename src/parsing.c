@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 01:55:21 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/22 03:26:02 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/07/09 21:00:40 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,6 @@ int	coordinates_check(char **av, t_mlx *fractol)
 	int	i;
 
 	i = 0;
-	if ((!ft_strchr(av[0], ',') && !ft_strchr(av[0], '.')) || (!ft_strchr(av[1],
-				',') && !ft_strchr(av[1], '.')))
-	{
-		print_controls(0);
-		ft_exit_mlx(1, fractol);
-	}
 	if (!float_check(av[0]) || !float_check(av[1]))
 	{
 		print_controls(0);
@@ -78,7 +72,7 @@ double	ft_atof(char *str)
 		number = (number * 10.0) + (str[i] - '0');
 		i++;
 	}
-	if (str[i] && (str[i] == '.' || str[i] == ','))
+	if (str[i] && str[i] == '.')
 		i++;
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{

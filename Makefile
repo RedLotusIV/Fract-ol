@@ -6,7 +6,7 @@
 #    By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 00:04:02 by amouhand          #+#    #+#              #
-#    Updated: 2024/04/22 00:50:28 by amouhand         ###   ########.fr        #
+#    Updated: 2024/07/09 18:12:49 by amouhand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,17 +22,17 @@ OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -g3 -O0
+CFLAGS = -Wall -Wextra -Werror -g -O3
 
 MLX = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 $(LIBFT):
 	@make -s -C libft/
 

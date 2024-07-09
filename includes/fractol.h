@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:31:06 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/22 03:30:24 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/07/09 20:54:09 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,12 @@ typedef struct s_mlx
 	double		x_offset;
 	double		y_offset;
 	int			max_iter;
-	int			mouse_x;
-	int			mouse_y;
 	t_complex	min;
 	t_complex	max;
 }				t_mlx;
 
-# define WIDTH 400
-# define HEIGHT 400
+# define WIDTH 500
+# define HEIGHT 500
 
 // mlx
 int				end_window(t_mlx *fractol);
@@ -86,5 +84,8 @@ t_complex		add(t_complex a, t_complex b);
 t_complex		square(t_complex a);
 // colors
 int				color(t_mlx *fractol, int iter);
+
+int				trailing_spaces(char *str, int i, int flag);
+void			check_init(int *i, int *j);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:30:38 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/22 03:26:22 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/07/09 20:55:46 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@ int	print_controls(int flag)
 	{
 		ft_printf("Usage: ./fractol [fractal] (Optional [X] [Y] for Julia) \n");
 		ft_printf("Fractals: mandelbrot(or M, m), julia(or J, j)\n");
+	}
+	return (0);
+}
+
+int	trailing_spaces(char *str, int i, int flag)
+{
+	if (flag)
+	{
+		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
+			return (0);
+		else
+			return (1);
 	}
 	return (0);
 }

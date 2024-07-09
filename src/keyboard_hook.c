@@ -6,7 +6,7 @@
 /*   By: amouhand <amouhand@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 03:20:20 by amouhand          #+#    #+#             */
-/*   Updated: 2024/04/22 03:20:02 by amouhand         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:02:43 by amouhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,5 @@ void	switch_fractal(t_mlx *fractol)
 	fractol->min.imag = -2.0;
 	fractol->max.real = 2.0;
 	fractol->max.imag = 2.0;
-	fractol->mouse_x = 0;
-	fractol->mouse_y = 0;
 	render(fractol);
 }
